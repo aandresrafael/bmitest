@@ -1,27 +1,23 @@
 development:
-  adapter: mysql2
+  adapter: postgresql
+  encoding: unicode
   database: bmitest
-  host: localhost
-  username: root
-  password:
-  encoding: utf8
-  collation: utf8_general_ci
+  pool: 5
+  username: postgres
+  password: aandres1983
 
 test:
-  adapter: mysql2
+  adapter: postgresql
+  encoding: unicode
   database: bmitest
-  host: localhost
-  username: root
-  password:
-  encoding: utf8
-  collation: utf8_general_ci
+  pool: 5
+  username: postgres
+  password: aandres1983
 
 production:
-  adapter: mysql2
+  adapter: postgresql
+  encoding: unicode
   database: bmitest
-  host: localhost
-  username: root
+  pool: 5
+  username: postgres
   password:
-  encoding: utf8
-  collation: utf8_general_ci
-  reconnect: true
