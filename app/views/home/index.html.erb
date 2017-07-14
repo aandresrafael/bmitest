@@ -1,0 +1,33 @@
+<h2 class='page-header'>Calculate BMI</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <% if flash.now[:message].present? %>
+      <div class="alert alert-danger" role="danger">
+        <%= flash.now[:message] %>
+      </div>
+    <% end %>
+
+    <%= form_tag(calculate_bmi_path) do  %>
+      <div class="form-group">
+        <label for="date_played">Weight</label>
+        <%= number_field :user, :weight, step: :any %>
+      </div>
+      <div class="form-group">
+        <label for="opponent_id">Height</label>
+        <%= number_field :user, :height, step: :any %>
+      </div>
+      <button type="submit" class="btn btn-default">Calculate</button>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <% if  @bmi.present? and @category.present? %>
+      <div class="alert alert-info" role="alert">
+        Your BMI is:
+        <strong><%= @bmi.to_f.round(2) %></strong> .
+        Considered: <strong><%= @category.description %></strong>
+      </div>
+    <% end %>
+  </div>
+</div>
